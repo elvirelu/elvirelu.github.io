@@ -1,0 +1,56 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.bgnavbarperso {
+    height:80px;
+    background-color: aliceblue;
+}
+
+.logo{
+    float: left;
+    width: 80px;
+    height:80px;
+}
+
+.dtxt{
+    float: left;
+    font-size: xx-large;
+    padding-left: 20px;
+    padding-top: 13px;
+}
+
+.rdiv{
+    float:right;
+    margin:50px;
+}
+
+.ldiv{
+    float:left;
+    margin: 30px;
+}
+
+ul li{
+    margin-left: 35px;
+    font-size: x-large;
+}
+
+.para{
+    font-size: 16pt;
+    color: grey;
+    line-height: 40px;
+}
+
+.css-byc8v3 {
+    width: 304px;
+    height: 195px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(144, 144, 144);
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    border-radius: 1px;
+}
+
