@@ -1,6 +1,6 @@
 let contenuAccueil = () =>{
     $('body').css('background', 'white');
-let contenu = `<div class="container">
+let contenu = `
 <div class="row justify-content-between">
 <div class="col-5"><img src="../images/intro/salon.jpg"></div>
 <div class="col-5">
@@ -42,7 +42,6 @@ Le salon vend aussi une assez grande gamme de produits de soins capillaires : pr
 
 </div>
 
-</div>
 </div>
 `;
 $('#contenuIndex').html(contenu);
