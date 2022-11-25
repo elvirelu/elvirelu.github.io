@@ -1,7 +1,6 @@
 let contenuAccueil = () =>{
     $('body').css('background', 'white');
 let contenu = `<div class="container">
-<br><br>
 <div class="row justify-content-between">
 <div class="col-5"><img src="../images/intro/salon.jpg"></div>
 <div class="col-5">
