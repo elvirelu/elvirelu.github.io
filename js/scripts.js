@@ -75,7 +75,7 @@ let listerpanier = () => {
     resultat += "</tbody></table>";
     resultat += `<br><br>
     <button type="button" class="btn btn-primary" onclick="payer();">Aller Payer</button>
-    <button type="button" class="btn btn-secondary" onclick="initialiser();">Continuer Acheter Produits</button>
+    <button type="button" class="btn btn-warning" onclick="initialiser();">Continuer Acheter Produits</button>
     `;
     $('#contenu').html(resultat);
 
@@ -164,7 +164,8 @@ let payer = () => {
     <div class="card-body">
       <h3 class="card-title">Grande Vente</h3>
       <h4 class="card-subtitle mb-2 text-muted">Produits Capillaires</h4><br>
-      <h5 class="card-text"><div id="msg"></div></h5>
+      <h5 class="card-text"><div id="msg"></div></h5><br>
+      <button type="button" class="btn btn-info" onclick="initialiser()">Continuer Acheter Produits</button>
     </div>
   </div>
 
@@ -190,21 +191,16 @@ let promo = () => {
     if(code.toUpperCase() == "CMBSC1"){
         if(sousTotal>=100 && sousTotal<200){
             promotion = sousTotal*0.15;
-            msg = "Lorsque vous achetez plus de 200 $, vous pouvez obtenir 20 % de rabais"
         }
         else if(sousTotal>=200 && sousTotal<300){
             promotion = sousTotal*0.20;
-            msg = "Lorsque vous achetez plus de 200 $, vous pouvez obtenir 30 % de rabais"
         }
         else if(sousTotal>=300){
             promotion = sousTotal*0.30;
         }
-        else{
-            msg = "Lorsque vous achetez plus de 100 $, vous pouvez obtenir 15 % de rabais";
-        }
         taxGST = (sousTotal-promotion)*GST;
         taxQST = (sousTotal-promotion)*QST;
-        totalFacture = sousTotal + taxGST + taxQST;
+        totalFacture = sousTotal - promotion + taxGST + taxQST;
     }
     payer();
 }
