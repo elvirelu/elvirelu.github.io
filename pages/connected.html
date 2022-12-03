@@ -7,17 +7,24 @@
     <title>Atelier du Coiffure</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../utilitaires/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../utilitaires/icons-1.8.1/bootstrap-icons.css">
     <script src="../utilitaires/bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
     <script src="../utilitaires/jquery-3.6.0.min.js"></script>
     <script src="../js/adhesion.js"></script>
     <script src="../js/connect.js"></script>
     <script src="../js/members.js"></script>
+    <script src="../js/rendez-vous.js"></script>
+    <script src="../js/produitCateg.js"></script>
+    <script src="../js/produits.js"></script>
+    <script src="../js/compte.js"></script>
+    <script src="../js/contenuAccueil.js"></script>
+    <script src="../js/scripts.js"></script>
 </head>
-<body background="../images/bg.png">
-  <nav class="navbar navbar-expand-lg bgnavbarperso">
+<body>
+  <nav class="navbar navbar-expand-lg border">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="../images/logo.jpg" width="60" height="60" alt="salon du Coiffure">
+            <img src="../images/logo.jpg" class="logo" alt="salon du Coiffure">
           </a>
         <a class="navbar-brand" href="connected.html"><h3>L'Atelier de Coiffure</h3></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -27,27 +34,88 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="acceuilconnected.html">Accueil</a>
+                  <!-- <button class="btn btn-outline-dark btn-lg" type="button" onclick="contenuAccueil();">Accueil</button> -->
+                    <a class="nav-link" aria-current="page" href="javascript:contenuAccueil();">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="rendez-vous.html">Rendez-vous</a>
+                  <!-- <button class="btn btn-outline-dark btn-lg" type="button" onclick="formRendezvous();">Rendez-vous</button> -->
+                    <a class="nav-link" href="javascript:formRendezvous();">Rendez-vous</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="produitscateg.html">Produits Capillaires</a>
+                  <!-- <button class="btn btn-outline-dark btn-lg" type="button" onclick="produitCateg();">Produits Capillaires</button> -->
+                    <a class="nav-link" href="javascript:produitCateg();">Produits Capillaires</a>
                 </li>                
             </ul>
           </div>
-          <div class="collapse navbar-collapse rdiv" id="navbarNav2">
+          <div class="collapse navbar-collapse me-auto" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-item">
+                  <!-- <button class="btn btn-outline-success" type="button" onclick="compte();">Mon Compte</button> -->
+                  <a class="nav-link" href="javascript:listerpanier();">Panier</a>
+              </li>
+                <li class="nav-item">
+                  <!-- <button class="btn btn-outline-success" type="button" onclick="compte();">Mon Compte</button> -->
+                  <a class="nav-link" href="javascript:compte();">Mon Compte</a>
+              </li>
               <li class="nav-item">
-                <a class="nav-link" href="compte.html">Mon Compte</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../index.html">Deconnexion</a>
-            </li>
-            </ul>
+                <!-- <button class="btn btn-outline-success" type="button" onclick="location.href='../index.html'">Deconnexion</button> -->
+                  <a class="nav-link" href="../index.html">Deconnexion</a>
+              </li>
+              </ul>
         </div>
     </div>
 </nav>
+<br><br>
+<div class="container">
+    <div id="contenu">
+        
+<div class="container">
+    <div id="contenu">
+      <div class="row">
+      <div class="card" style="width: 58rem;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../images/promo/chrismas.jpg" class="d-block w-100" alt="chrismas">
+            </div>
+            <div class="carousel-item">
+              <img src="../images/promo/newyear.jpg" class="d-block w-100" alt="newyear">
+            </div>
+            <div class="carousel-item">
+              <img src="../images/promo/winter.jpg" class="d-block w-100" alt="winter">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          </div>    
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h3 class="card-title">Grande Vente</h3>
+          <h4 class="card-subtitle mb-2 text-muted">Produits Capillaires</h4><br>
+          <h5 class="card-text">Nous avons une grande vente du 12/01/2022 au 12/31/2022. Si vous achetez des produits capillaires de plus de 100 $, 
+            vous obtiendrez 15 % de rabais. Si vous dépensez plus de 200 $, vous obtiendrez 20 % de rabais. Si vous dépensez plus de 300 $, 
+            vous obtiendrez 30 % de rabais. Merci d'utiliser le code promotionnel : <span class="badge text-bg-secondary">CMBSC1</span></h5>
+        </div>
+      </div>
+    
+    </div>
+    </div>
+  
+    </div>
+  </div>
+
 </body>
 </html>

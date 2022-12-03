@@ -41,4 +41,4 @@ let produits = [
             "image":"longer.png",
             "description":"La formule professionnelle de Pro Longer procure instantanément plus de résistance et de brillance tout en nettoyant délicatement la fibre capillaire. Il utilise la technologie de co-émulsion afin de convenir à tous les types de cheveux ayant besoin de protection. "
         }
-]
+];
