@@ -1,20 +1,23 @@
+let selectedName = "";
+let selectedServices = "";
+let date = "";
+let horaire = "";
+
 let rendezvous = () =>{
-    let name = document.getElementById('name');
-    let selectedName = name.options[name.selectedIndex].text;
+    date = document.getElementById('date').value;
+horaire = document.getElementById('horaire').value;
+    let text = `
+    <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div><br><br>
 
-    let selectedServices = $('#service').val();
-
-    let date = document.getElementById('date').value;
-
-    let horaire = document.getElementById('horaire').value;
-
-    let text = `<h3>Coiffeur: ${selectedName}</h3>
+    <h3>Coiffeur: ${selectedName}</h3>
     <h3>Service: ${selectedServices}</h3>
     <h3>Date: ${date}</h3>
     <h3>Horaire: ${horaire}</h3>
     <br>
     <button type="button" class="btn btn-primary" onclick="confirmMsg();">Confirmer</button>
-    <button type="button" class="btn btn-warning" onclick="formRendezvous();">modifier</button>
+    <button type="button" class="btn btn-warning" onclick="formCoiffeur();">modifier</button>
     `
     $('#contenu').html(text)
 }
@@ -26,10 +29,15 @@ let confirmMsg = () =>{
     $('#contenu').html(text)
 }
 
-let formRendezvous = () => {
+let formCoiffeur = () => {
     let contenu = `
+    <div id="progbar">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </div>
+    <br><br>
     <form>
-    <div id="contenu">
     <div class="row mb-3">
       <label for="name" class="col-sm-2 col-form-label fs-3">Coiffeur</label>
       <div class="col-sm-6">
@@ -42,6 +50,26 @@ let formRendezvous = () => {
         </select>
       </div>
     </div>
+
+    <div class="col-sm-8 text-end">
+    <button type="button" class="btn btn-primary" onclick="formService();">Suivant</button>
+    </div>
+
+    </form>
+    `;
+    $('#contenu').html(contenu);
+
+}
+
+let formService = () =>{
+    let name = document.getElementById('name');
+    selectedName = name.options[name.selectedIndex].text;
+    let contenu =  `
+    <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+</div><br><br>
+
+    <form>
     <div class="row mb-3">
       <label for="service" class="col-sm-2 col-form-label fs-3">Service</label>
       <div class="col-sm-6">
@@ -62,6 +90,27 @@ let formRendezvous = () => {
     </div>
 
     <div class="row mb-3">
+    <div class="col-sm-4 text-start">
+    <button type="button" class="btn btn-secondary" onclick="formCoiffeur();">Précédent</button>
+    </div>
+    <div class="col-sm-4 text-end">
+    <button type="button" class="btn btn-primary" onclick="formDate();">Suivant</button>
+    </div>
+    </div>
+
+    </form>
+    `;
+    $('#contenu').html(contenu);
+}
+
+let formDate = () =>{
+    selectedServices = $('#service').val();
+    let contenu = `
+    <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+</div><br><br>
+    <form>
+    <div class="row mb-3">
         <label for="date" class="col-sm-2 col-form-label fs-3">Date</label>
         <div class="col-sm-6">
             <input id="date" class="form-control form-control-lg" type="date">
@@ -74,16 +123,20 @@ let formRendezvous = () => {
             <input id="horaire" class="form-control form-control-lg" type="time">
         </div>
     </div>
-
 <br><br>
 
-<div class="col-md-9 text-center">
+<div class="row mb-3">
+<div class="col-sm-4 text-start">
+    <button type="button" class="btn btn-secondary" onclick="formService();">Précédent</button>
+</div>
+<div class="col-sm-4 text-end">
     <button type="button" class="btn btn-primary" onclick="rendezvous();">Envoyer</button>
-    <button type="reset" class="btn btn-secondary">Reinitialiser</button>
     <button type="button" class="btn btn-warning" onclick="location.href='connected.html'">Annuler</button>
 </div>
 </div>
-  </form>
+</form>
 `;
 $('#contenu').html(contenu);
+date = document.getElementById('date').value;
+horaire = document.getElementById('horaire').value;
 }
