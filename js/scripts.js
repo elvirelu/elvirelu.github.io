@@ -121,22 +121,10 @@ const construireTR = (produit) =>{
 
 let del = (id) => {
     panierliste = panierliste.filter(function(unProduit) { return unProduit.id != id; }); 
-    localStorage.setObj("panier",panierliste);
     listerpanier();
 }
 
-// let calculer = () => {
-//     sousTotal = 0;
-//     for(let unProduit of panierliste){
-//         sousTotal += unProduit.prix;
-//     }
-//     taxGST = sousTotal*GST;
-//     taxQST = sousTotal*QST;
-//     totalFacture = sousTotal + taxGST + taxQST;
-// }
-
 let payer = () => {
-    // calculer();
     let msg = "Nous avons une grande vente du 12/01/2022 au 12/31/2022. Si vous achetez des produits capillaires de plus de 100 $, \
     vous obtiendrez 15 % de rabais. Si vous dépensez plus de 200 $, vous obtiendrez 20 % de rabais. Si vous dépensez plus de 300 $,\
     vous obtiendrez 30 % de rabais. Merci d'utiliser le code promotionnel : CMBSC1";
@@ -207,5 +195,6 @@ let promo = () => {
 
 
 let confirmerPayer = () => {
+    panierliste = [];
     document.getElementById('contenu').innerHTML = "<h3>Merci de votre Achat</h3><h3>Vous allez recevoir la confirmation d'achat et la facture par courriel.</h3>";
 }
