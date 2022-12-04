@@ -196,5 +196,6 @@ let promo = () => {
 
 let confirmerPayer = () => {
     panierliste = [];
+    promotion = 0;
     document.getElementById('contenu').innerHTML = "<h3>Merci de votre Achat</h3><h3>Vous allez recevoir la confirmation d'achat et la facture par courriel.</h3>";
 }
