@@ -120,7 +120,13 @@ const construireTR = (produit) =>{
 }
 
 let del = (id) => {
-    panierliste = panierliste.filter(function(unProduit) { return unProduit.id != id; }); 
+    let newPanierliste = [];
+    for(let i=0;i<panierliste.length;i++){
+        if(panierliste[i].id==id){
+            panierliste.splice(i,1);
+        }
+        break;
+    }
     listerpanier();
 }
 
